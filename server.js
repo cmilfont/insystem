@@ -1,8 +1,9 @@
 const express = require('express');
 
 const app = express();
-
+const models = require('./server/models');
 require('./server/config/express.js')(express, app);
+require('./server/config/passport.js')(app, models);
 
 app.set('port', (process.env.PORT || 3001));
 
